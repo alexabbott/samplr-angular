@@ -1,0 +1,22 @@
+// Place all the styles related to the planets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.pad {
+	width: 100px;
+	height: 100px;
+	background-color: #000;
+	color: #fff;
+	margin: 3px 2px;
+	border: 2px solid #000;
+	display: inline-block;
+}
+
+.push {
+	width: 35px;
+}
+
+.center {
+	margin: 0 auto;
+	text-align: center;
+}

@@ -1,0 +1,52 @@
+
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-8 col-sm-offset-3 col-md-offset-2 text-center">
+
+    <h1>SAMPLR</h1>
+
+    <div ng-repeat="s in samples |limitTo: 8" class="pad" onclick="changeSrc(this);">
+      <audio ng-src="{{s.url}}" class="push"></audio>
+      <strong>{{s.category}}</strong><br>
+      <strong>{{s.name}}</strong>
+    </div>
+
+    <h2>Available Samples</h2>
+
+    <input ng-model="search" placeholder="search samples"><br><br>
+
+    <div ng-repeat="s in samples |filter:search" class="pad" onclick="reply_click(this.innerHTML);">
+      <audio ng-src="{{s.afile.url}}" class="push"></audio>
+      <strong>{{s.category}}</strong><br>
+      <strong>{{s.name}}</strong>
+    </div>
+
+    <h2>Add a Sample</h2>
+
+    <h3>Sample Name</h3>
+    <input type="text" ng-model="sample.name">
+
+    <h3>URL</h3>
+    <input type="text" ng-model="sample.url"><br>
+
+    <h3>Audiofile</h3>
+    <input type="file" ng-model="sample.afile" class="center">
+
+    <h3>Category</h3>
+    <select ng-model="sample.category">
+        <option value="" disabled selected>Select a category...</option>
+        <option value="kick">kick</option>
+        <option value="snare">snare</option>
+        <option value="hi-hat closed">hi-hat closed</option>
+        <option value="hi-hat open">hi-hat open</option>
+        <option value="clap">clap</option>
+        <option value="cymbal">cymbal</option>
+        <option value="fx">fx</option>
+        <option value="vocal">vocal</option>
+    </select><br>
+
+    <button ng-click="addSample(sample)">Add</button>
+
+  </div>
+</div>
+
